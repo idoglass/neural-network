@@ -1,0 +1,42 @@
+@startuml network
+
+class Network
+{
+    -Layer[] layers;
+    -IMath * math;
+    -ThreadPool tpool;
+
+    +Network();
+    +GetResult();
+}
+
+interface IMath
+{
+    +Calc();
+}
+
+class Layer
+{
+   -Nueron[] nuerons;
+   -LayerType type;
+   +Layer(LayerType type_, int amount_)
+}
+
+class Nueron
+{
+    -Connection[] connection;
+}
+
+class Connection
+{
+    weight : double;
+}
+
+
+
+Network "1" *-- "*" Layer
+Nueron  "1" *-- "*" Connection
+Layer  "1" *-> "*" Nueron
+
+@enduml
+
