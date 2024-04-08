@@ -8,9 +8,11 @@ neuron
 namespace neural_network
 {
 
-    class Neuron
-    {
-    };
+class Neuron
+{
+public:
+    Neuron() {};
+};
 
 } // namespace neural_network
 #endif //__NEURAL_NETWORK_NEURON__
